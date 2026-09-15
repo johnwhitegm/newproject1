@@ -28,8 +28,16 @@ export default function App() {
     }
   }
 
+  const today = new Date().toLocaleDateString(undefined, {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <main className="app">
+      <p className="app__date">{today}</p>
       <header className="app__header">
         <h1>newproject1</h1>
         <p>A tiny full-stack guestbook — React + Express, all in TypeScript.</p>
