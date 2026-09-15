@@ -42,7 +42,7 @@ Then open http://localhost:5173 and sign the guestbook. The Vite dev server prox
 | `GET` | `/api/messages` | List guestbook messages |
 | `POST` | `/api/messages` | Create a message (`{ "author", "text" }`) |
 
-Messages are stored in memory, so they reset when the API restarts.
+Each message includes `id`, `author`, `text`, and an ISO-8601 `createdAt` timestamp. Messages are stored in memory, so they reset when the API restarts.
 
 ## Cloud Agent environment
 

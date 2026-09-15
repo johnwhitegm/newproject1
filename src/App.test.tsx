@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import App from "./App";
+import App, { formatTimestamp } from "./App";
 import type { Message } from "./api";
 
 function jsonResponse(body: unknown, status = 200): Response {
@@ -58,5 +58,11 @@ describe("App", () => {
       expect(screen.getByText("Grace")).toBeInTheDocument();
       expect(screen.getByText("Hi from the test suite")).toBeInTheDocument();
     });
+
+    const time = document.querySelector("time");
+    expect(time).not.toBeNull();
+    expect(time).toHaveAttribute("datetime");
+    const iso = time!.getAttribute("datetime")!;
+    expect(time).toHaveTextContent(formatTimestamp(iso));
   });
 });
