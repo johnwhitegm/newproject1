@@ -15,8 +15,13 @@ body {
   padding: 2.5rem 1.25rem 4rem;
 }
 
+.app__header {
+  padding: 2rem 0 1.75rem;
+}
+
 .app__header h1 {
-  margin: 0 0 0.25rem;
+  margin: 0 0 0.5rem;
+  padding: 0.5rem 0;
   font-size: 2.25rem;
   color: #4338ca;
 }
