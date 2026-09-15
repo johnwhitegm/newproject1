@@ -19,7 +19,7 @@ body {
   padding: 2rem 0 1.75rem;
 }
 
-.app__welcome {
+.app__header .app__welcome {
   margin: 0 0 0.75rem;
   padding: 0.65rem 0.9rem;
   border-radius: 8px;
