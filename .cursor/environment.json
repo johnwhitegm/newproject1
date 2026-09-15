@@ -5,16 +5,16 @@
     {
       "name": "api",
       "command": "npm run dev:server",
-      "description": "Express guestbook API (TypeScript via tsx watch) on http://localhost:3001"
+      "description": "Express guestbook API (TypeScript via tsx watch) on http://localhost:4280"
     },
     {
       "name": "web",
       "command": "npm run dev:web",
-      "description": "Vite React dev server on http://localhost:5173 (proxies /api to the API)"
+      "description": "Vite React dev server on http://localhost:5280 (proxies /api to the API)"
     }
   ],
   "ports": [
-    { "name": "web", "port": 5173 },
-    { "name": "api", "port": 3001 }
+    { "name": "web", "port": 5280 },
+    { "name": "api", "port": 4280 }
   ]
 }
