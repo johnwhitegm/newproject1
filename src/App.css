@@ -19,6 +19,15 @@ body {
   padding: 2rem 0 1.75rem;
 }
 
+.app__welcome {
+  margin: 0 0 0.75rem;
+  padding: 0.65rem 0.9rem;
+  border-radius: 8px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-weight: 600;
+}
+
 .app__header h1 {
   margin: 0 0 0.5rem;
   padding: 0.5rem 0;

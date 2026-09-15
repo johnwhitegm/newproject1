@@ -41,6 +41,7 @@ describe("App", () => {
 
   it("shows the empty state initially", async () => {
     render(<App />);
+    expect(screen.getByText(/welcome to the guestbook/i)).toBeInTheDocument();
     expect(await screen.findByText(/no messages yet/i)).toBeInTheDocument();
   });
 

@@ -42,6 +42,7 @@ export default function App() {
   return (
     <main className="app">
       <header className="app__header">
+        <p className="app__welcome">Welcome to the guestbook — sign in and leave a note.</p>
         <h1>newproject1</h1>
         <p>A tiny full-stack guestbook — React + Express, all in TypeScript.</p>
       </header>
