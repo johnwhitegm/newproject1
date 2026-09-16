@@ -24,11 +24,17 @@ describe("guestbook API", () => {
 
     expect(created.status).toBe(201);
     expect(created.body).toMatchObject({ id: 1, author: "Ada", text: "Hello, world!" });
+    expect(created.body.createdAt).toEqual(expect.any(String));
+    expect(new Date(created.body.createdAt).toISOString()).toBe(created.body.createdAt);
 
     const list = await request(app).get("/api/messages");
     expect(list.status).toBe(200);
     expect(list.body).toHaveLength(1);
-    expect(list.body[0]).toMatchObject({ author: "Ada", text: "Hello, world!" });
+    expect(list.body[0]).toMatchObject({
+      author: "Ada",
+      text: "Hello, world!",
+      createdAt: created.body.createdAt,
+    });
   });
 
   it("rejects a message that is missing fields", async () => {

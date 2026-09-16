@@ -2,6 +2,17 @@ import { useEffect, useState, type FormEvent } from "react";
 import { createMessage, fetchMessages, type Message } from "./api";
 import "./App.css";
 
+export function formatTimestamp(iso: string): string {
+  const date = new Date(iso);
+  if (Number.isNaN(date.getTime())) {
+    return iso;
+  }
+  return new Intl.DateTimeFormat(undefined, {
+    dateStyle: "medium",
+    timeStyle: "short",
+  }).format(date);
+}
+
 export default function App() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [author, setAuthor] = useState("");
@@ -31,6 +42,7 @@ export default function App() {
   return (
     <main className="app">
       <header className="app__header">
+        <p className="app__welcome">Welcome to the guestbook — sign in and leave a note.</p>
         <h1>newproject1</h1>
         <p>A tiny full-stack guestbook — React + Express, all in TypeScript.</p>
       </header>
@@ -64,6 +76,9 @@ export default function App() {
             {messages.map((m) => (
               <li key={m.id} className="message">
                 <span className="message__author">{m.author}</span>
+                <time className="message__time" dateTime={m.createdAt}>
+                  {formatTimestamp(m.createdAt)}
+                </time>
                 <span className="message__text">{m.text}</span>
               </li>
             ))}

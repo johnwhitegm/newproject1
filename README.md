@@ -17,18 +17,18 @@ A minimal full-stack TypeScript starter: a **Vite + React** frontend backed by a
 
 ```bash
 npm install        # install dependencies
-npm run dev        # start API (:3001) and web (:5173) together
+npm run dev        # start API (:3100) and web (:5180) together
 ```
 
-Then open http://localhost:5173 and sign the guestbook. The Vite dev server proxies `/api/*` requests to the Express API on port 3001.
+Then open http://localhost:5180 and sign the guestbook. The Vite dev server proxies `/api/*` requests to the Express API on port 3100.
 
 ## Scripts
 
 | Command | Description |
 | --- | --- |
 | `npm run dev` | Run the API and web dev servers concurrently |
-| `npm run dev:server` | Run only the Express API (`:3001`) |
-| `npm run dev:web` | Run only the Vite dev server (`:5173`) |
+| `npm run dev:server` | Run only the Express API (`:3100`) |
+| `npm run dev:web` | Run only the Vite dev server (`:5180`) |
 | `npm run build` | Type-check and build the frontend for production |
 | `npm run typecheck` | Type-check the whole project with `tsc` |
 | `npm run lint` | Lint with ESLint |
@@ -42,8 +42,8 @@ Then open http://localhost:5173 and sign the guestbook. The Vite dev server prox
 | `GET` | `/api/messages` | List guestbook messages |
 | `POST` | `/api/messages` | Create a message (`{ "author", "text" }`) |
 
-Messages are stored in memory, so they reset when the API restarts.
+Each message includes `id`, `author`, `text`, and an ISO-8601 `createdAt` timestamp. Messages are stored in memory, so they reset when the API restarts.
 
 ## Cloud Agent environment
 
-`.cursor/environment.json` installs dependencies with `npm ci` and starts the `api` and `web` dev servers as terminals, exposing ports 3001 and 5173.
+`.cursor/environment.json` installs dependencies with `npm ci` and starts the `api` and `web` dev servers as terminals, exposing ports 3100 and 5180.
